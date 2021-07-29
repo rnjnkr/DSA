@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class SortArrayByFrequency {
     public static void main(String[] args) {
-        int[] input = {10, 10, 9, 9, 8, 5, 5, 5, 5, 1, 1, 1, 1, 3};
+        int[] input = {10, 10, 9, 9, 8, 5, 5, 5, 5, 1, 1, 1, 1, 3, 2};
         Map<Integer, Integer> freq = new HashMap<>();
         Map<Integer, Integer> index = new HashMap<>();
 
@@ -33,7 +33,7 @@ public class SortArrayByFrequency {
             int freq2 = freq.get(b);
             if (freq1 != freq2) return freq1 - freq2;
             else {
-                return index.get(b) - index.get(a);
+                return a - b;
             }
         }).collect(Collectors.toList());
 
