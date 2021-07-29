@@ -15,16 +15,14 @@ import java.util.stream.Collectors;
 
 public class SortArrayByFrequency {
     public static void main(String[] args) {
-        int[] input = {10, 10, 9, 9, 8, 5, 5, 5, 5, 1, 1, 1, 1, 3, 2};
+        int[] input = {10, 10, 9, 9, 8, 5, 5, 5, 5, 1, 1, 1, 1, 3};
         Map<Integer, Integer> freq = new HashMap<>();
-        Map<Integer, Integer> index = new HashMap<>();
 
-        for (int i = 0; i < input.length; i++) {
-            if (!freq.containsKey(input[i])) {
-                freq.put(input[i], 1);
-                index.put(input[i], i);
+        for (int value : input) {
+            if (!freq.containsKey(value)) {
+                freq.put(value, 1);
             } else {
-                freq.put(input[i], freq.get(input[i]) + 1);
+                freq.put(value, freq.get(value) + 1);
             }
         }
 
